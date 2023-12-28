@@ -1,0 +1,27 @@
+let bgContainer = document.getElementById("bgContainer");
+
+let heading = document.getElementById("heading");
+
+let themeUserInput = document.getElementById("themeUserInput")
+
+let value = themeUserInput.value;
+
+function enter(event) {
+    // if ((value === "Light")) {
+    if ((themeUserInput.value === "Dark") && (event.key === "Enter")) {
+        // console.log("good")
+        bgContainer.classList.add("img-change");
+        heading.classList.add("heading-color-change");
+    } else if ((themeUserInput.value === "Light") && (event.key === "Enter")) {
+        bgContainer.classList.remove("img-change");
+        heading.classList.remove("heading-color-change");
+        // bgContainer.classList.add("img-back");
+        // console.log("back")
+    } else if ((themeUserInput.value !== "Dark") && (themeUserInput.value !== "Light") && (event.key === "Enter")) {
+        alert("enter the valid theme");
+    }
+
+    // }
+}
+
+themeUserInput.addEventListener("keydown", enter);
